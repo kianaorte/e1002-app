@@ -1,4 +1,10 @@
-import { LayoutDashboard, Calendar, Music } from "lucide-react";
+import {
+  LayoutDashboard,
+  Calendar,
+  Music,
+  CloudSun,
+  BookImage,
+} from "lucide-react";
 import styles from "./Navbar.module.scss";
 
 const Navbar: React.FC = () => {
@@ -13,9 +19,16 @@ const Navbar: React.FC = () => {
       <button>
         <Music size={30} />
       </button>
-      {/* //Dashboard - git commits, days til holidays etc
+      <button>
+        <CloudSun size={30} />
+      </button>
+      <button>
+        <BookImage size={30} />
+      </button>
+      {/* //Dashboard - git commits, days til holidays, Reminders etc
         //Calendar
         //Spotify
+        //Photo Album
         // */}
     </div>
   );
