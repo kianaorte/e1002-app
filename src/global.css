@@ -1,0 +1,74 @@
+```css
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  /* ─────────────────────────────────────────
+     Base
+     ───────────────────────────────────────── */
+
+  --background: #f7f5ef;
+  --foreground: #1c1c1c;
+
+  --card: #f7f5ef;
+  --card-foreground: #1c1c1c;
+
+  --popover: #f7f5ef;
+  --popover-foreground: #1c1c1c;
+
+  /* ─────────────────────────────────────────
+     Primary
+     ───────────────────────────────────────── */
+
+  --primary: #1c1c1c;
+  --primary-foreground: #f7f5ef;
+
+  /* ─────────────────────────────────────────
+     Secondary
+     ───────────────────────────────────────── */
+
+  --secondary: #e5e1d8;
+  --secondary-foreground: #1c1c1c;
+
+  /* ─────────────────────────────────────────
+     Muted
+     ───────────────────────────────────────── */
+
+  --muted: #e5e1d8;
+  --muted-foreground: #555555;
+
+  /* ─────────────────────────────────────────
+     Accent
+     ───────────────────────────────────────── */
+
+  --accent: #e8c547;
+  --accent-foreground: #1c1c1c;
+
+  /* ─────────────────────────────────────────
+     Destructive
+     ───────────────────────────────────────── */
+
+  --destructive: #e85d5d;
+
+  /* ─────────────────────────────────────────
+     UI
+     ───────────────────────────────────────── */
+
+  --border: #555555;
+  --input: #555555;
+  --ring: #1c1c1c;
+
+  --radius: 0.375rem;
+
+  /* ─────────────────────────────────────────
+     Calendar categories
+     ───────────────────────────────────────── */
+
+  --category-work: #5d8db8;
+  --category-personal: #72a66a;
+  --category-reminder: #e8c547;
+  --category-social: #9274b5;
+  --category-travel: #e38b45;
+  --category-important: #e85d5d;
+}
+```
