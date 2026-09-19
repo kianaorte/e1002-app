@@ -1,4 +1,8 @@
 .einkScreen {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
   width: 800px;
   height: 480px;
   background: var(--background);

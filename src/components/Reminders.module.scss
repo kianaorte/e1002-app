@@ -1,0 +1,15 @@
+.completed {
+  text-decoration: line-through;
+  color: rgb(0, 255, 0);
+}
+.reminderRow {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+.remindersCard {
+  max-height: 30%;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
