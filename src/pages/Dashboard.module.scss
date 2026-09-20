@@ -1,4 +1,8 @@
 .dashboard {
   display: flex;
   flex: 1;
+  justify-content: flex-end;
+  align-content: flex-end;
+  height: 100%;
+  padding: 0 24px 24px 0;
 }
