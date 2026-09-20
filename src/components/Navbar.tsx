@@ -6,6 +6,7 @@ import {
   BookImage,
 } from "lucide-react";
 import styles from "./Navbar.module.scss";
+import Spotify from "./Spotify";
 
 const Navbar: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const Navbar: React.FC = () => {
         <Calendar size={30} />
       </button>
       <button>
-        <Music size={30} />
+        <Music onClick={Spotify} />
       </button>
       <button>
         <CloudSun size={30} />
