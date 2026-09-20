@@ -1,20 +1,43 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { CardContent, Card, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  getSpotifyCurrentlyPlaying,
-  type SpotifyCurrentlyPlayingResponse,
-} from "../utils/getSpotify";
+import { getSpotifyCurrentlyPlaying } from "../utils/getSpotify";
 
 const Spotify = () => {
-  const spotifyData: SpotifyCurrentlyPlayingResponse =
-    getSpotifyCurrentlyPlaying();
-  spotifyData.map((data: JSON) => {
-    console.log(spotifyData.item.album.name);
-  });
+  const [albumName, setAlbumName] = useState<string | null>(null);
+  const [albumCover, setAlbumCover] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  console.log(albumCover);
+  useEffect(() => {
+    let ignore = false;
+
+    const loadAlbum = async () => {
+      const currentlyPlaying = await getSpotifyCurrentlyPlaying();
+
+      if (!ignore) {
+        setAlbumName(currentlyPlaying?.item?.album?.name ?? null);
+        const cover = currentlyPlaying?.item?.album?.images?.find(
+          (image) => image.width == 300,
+        )?.url;
+        setAlbumCover(cover ?? null);
+        setIsLoading(false);
+      }
+    };
+
+    void loadAlbum();
+
+    return () => {
+      ignore = true;
+    };
+  }, []);
   return (
     <Card>
-      <CardHeader>Header Text</CardHeader>
-      <CardContent>Content Text</CardContent>
+      <CardHeader>
+        <CardTitle>Spotify</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <img src={albumCover} />
+        {isLoading ? "Loading album…" : (albumName ?? "No album available")}
+      </CardContent>
     </Card>
   );
 };

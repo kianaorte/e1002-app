@@ -7,6 +7,11 @@ export type SpotifyCurrentlyPlayingResponse = {
     name?: string;
     album?: {
       name?: string;
+      images?: {
+        height: number | null;
+        url: string | null;
+        width: number | null;
+      }[];
     };
   };
 };
@@ -50,9 +55,8 @@ export const getSpotifyCurrentlyPlaying = async () => {
       console.log("Nothing currently playing");
       return null;
     }
-
     const data: SpotifyCurrentlyPlayingResponse = await response.json();
-    console.log("Spotify response:", data);
+    console.log("data", data);
     return data;
   } catch (error) {
     console.error("Error fetching Spotify", error);
