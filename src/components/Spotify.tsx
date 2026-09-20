@@ -32,11 +32,12 @@ const Spotify = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Spotify</CardTitle>
+        <CardTitle>
+          {isLoading ? "Loading album…" : (albumName ?? "No album available")}
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <img src={albumCover} />
-        {isLoading ? "Loading album…" : (albumName ?? "No album available")}
       </CardContent>
     </Card>
   );
