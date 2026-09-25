@@ -37,7 +37,7 @@ const Spotify = () => {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <img src={albumCover} />
+        <img src={albumCover} style={{ minHeight: 300, minWidth: 300 }} />
       </CardContent>
     </Card>
   );
